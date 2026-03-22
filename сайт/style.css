@@ -1,0 +1,533 @@
+/* ========================================
+   🎨 ПОЛНЫЙ CSS ДЛЯ TWITCHSEARCH
+   ======================================== */
+
+/* --- БАЗОВЫЕ СТИЛИ --- */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #1a0a2e 0%, #2d1b4e 50%, #1a0a2e 100%);
+    color: #ffffff;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- СКРЫТИЕ ЭЛЕМЕНТОВ --- */
+.hidden {
+    display: none !important;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+/* --- ШАПКА --- */
+header {
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: white;
+    padding: 30px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #4a2d7c;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 90px;
+    font-weight: 900;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, #a855f7 0%, #7c3aed 50%, #4c1d95 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 50px rgba(168, 85, 247, 0.6);
+    text-align: center;
+    filter: drop-shadow(0 0 20px rgba(124, 58, 237, 0.5));
+}
+
+/* Кнопка выхода */
+#logoutBtn {
+    position: absolute;
+    right: 30px;
+    background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%);
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+
+#logoutBtn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(255, 65, 108, 0.4);
+}
+
+/* --- ЦЕНТРАЛЬНЫЙ КОНТЕЙНЕР --- */
+main {
+    flex: 1;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    min-height: calc(100vh - 150px);
+}
+
+/* --- СЕКЦИЯ АВТОРИЗАЦИИ --- */
+#authSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    max-width: 500px;
+    margin-top: 20px;
+}
+
+/* --- ФОРМА РЕГИСТРАЦИИ --- */
+form {
+    background: #2d1b4e;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-sizing: border-box;
+    border: 2px solid #4a2d7c;
+    text-align: center;
+    margin: 0 auto;
+}
+
+/* Текст под заголовком */
+#authSection p {
+    color: #9333ea;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    text-shadow: 0 0 15px rgba(147, 51, 234, 0.6);
+    letter-spacing: 0.5px;
+    line-height: 1.4;
+}
+
+/* Заголовок "Добро пожаловать!" */
+#authSection h2 {
+    margin: 0 0 15px 0;
+    color: #ffffff;
+    font-size: 48px;
+    font-weight: 800;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    white-space: nowrap;
+    background: linear-gradient(135deg, #7c3aed 0%, #a855f7 50%, #9333ea 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 30px rgba(124, 58, 237, 0.6);
+}
+
+/* Поля ввода */
+input {
+    padding: 15px;
+    border: 2px solid #4a2d7c;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #1a0a2e;
+    color: #ffffff;
+    text-align: center;
+}
+
+input:focus {
+    border-color: #a855f7;
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(168, 85, 247, 0.3);
+    background-color: #251540;
+}
+
+/* Кнопка отправки */
+button[type="submit"] {
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    background: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    width: 100%;
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+button[type="submit"]:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(168, 85, 247, 0.5);
+}
+
+/* --- ЛИЧНЫЙ КАБИНЕТ --- */
+.card {
+    background: #2d1b4e;
+    padding: 50px;
+    border-radius: 20px;
+    margin-top: 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+    max-width: 1000px;
+    width: 100%;
+    box-sizing: border-box;
+    border: 2px solid #4a2d7c;
+    text-align: center;
+}
+
+.card h3 {
+    color: #a855f7;
+    font-size: 36px;
+    margin-top: 0;
+    font-weight: 700;
+    text-align: center;
+}
+
+.card p {
+    color: #c9a8ff;
+    font-size: 20px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* --- ОШИБКИ --- */
+.error {
+    color: #ff0000 !important;
+    font-size: 16px;
+    margin-top: 15px;
+    font-weight: bold !important;
+    background: rgba(255, 0, 0, 0.15);
+    padding: 15px;
+    border-radius: 8px;
+    border: 2px solid #ff0000 !important;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.error.hidden {
+    display: none !important;
+}
+
+/* Анимация тряски */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-8px); }
+    20%, 40%, 60%, 80% { transform: translateX(8px); }
+}
+
+.error.shake {
+    -webkit-animation: shake 0.5s ease-in-out;
+    animation: shake 0.5s ease-in-out;
+}
+
+/* --- ИНФОРМАЦИОННАЯ ТАБЛИЦА (КОМПАКТНАЯ) --- */
+.info-table-container {
+    background: rgba(45, 27, 78, 0.9);
+    padding: 35px 30px;
+    border-radius: 15px;
+    margin-top: 40px;
+    margin-bottom: 25px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
+    width: 66vw;
+    max-width: 700px;
+    min-width: 320px;
+    box-sizing: border-box;
+    border: 2px solid #a855f7;
+}
+
+.info-table-container h3 {
+    color: #c084fc;
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    margin: 0 0 25px 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 15px rgba(192, 132, 252, 0.4);
+}
+
+.info-table {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    padding: 20px 18px;
+    background: rgba(26, 10, 46, 0.6);
+    border-radius: 12px;
+    border-left: 5px solid #a855f7;
+    transition: all 0.3s ease;
+    min-height: 110px;
+}
+
+.info-row:hover {
+    background: rgba(26, 10, 46, 0.85);
+    transform: translateX(8px);
+    border-left-color: #c084fc;
+    border-left-width: 6px;
+    box-shadow: 0 5px 20px rgba(168, 85, 247, 0.3);
+}
+
+.info-icon {
+    font-size: 40px;
+    min-width: 50px;
+    text-align: center;
+    line-height: 1;
+    filter: drop-shadow(0 0 8px rgba(168, 85, 247, 0.4));
+}
+
+.info-text {
+    color: #d8b4fe;
+    font-size: 15px;
+    line-height: 1.6;
+    text-align: left;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+}
+
+/* --- ПОДВАЛ --- */
+footer {
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: #c9a8ff;
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid #4a2d7c;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* ========================================
+   📱 АДАПТИВНОСТЬ
+   ======================================== */
+
+@media (max-width: 1050px) {
+    #authSection p {
+        font-size: 22px;
+        max-width: 350px;
+    }
+    
+    #authSection {
+        margin-top: 15px;
+    }
+    
+    #authSection h2 {
+        font-size: 36px;
+        letter-spacing: 1.5px;
+        margin-bottom: 12px;
+    }
+    
+    form {
+        padding: 30px;
+        max-width: 90%;
+    }
+    
+    input, button[type="submit"] {
+        padding: 12px;
+        font-size: 14px;
+    }
+    
+    /* Таблица */
+    .info-table-container {
+        width: 75vw;
+        max-width: 600px;
+        padding: 30px 25px;
+    }
+    
+    .info-table-container h3 {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+    
+    .info-row {
+        padding: 18px 15px;
+        min-height: 100px;
+    }
+    
+    .info-text {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+    
+    .info-icon {
+        font-size: 36px;
+        min-width: 45px;
+    }
+}
+
+@media (max-width: 768px) {
+    #authSection p {
+        font-size: 20px;
+        max-width: 300px;
+    }
+    
+    #authSection h2 {
+        font-size: 28px;
+        letter-spacing: 1px;
+        margin-bottom: 10px;
+    }
+    
+    header {
+        padding: 20px 25px;
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    header h1 {
+        font-size: 42px;
+    }
+    
+    #logoutBtn {
+        position: static;
+        margin-top: 10px;
+    }
+    
+    /* Таблица */
+    .info-table-container {
+        width: 85vw;
+        max-width: 90%;
+        padding: 25px 20px;
+        margin-bottom: 20px;
+    }
+    
+    .info-table-container h3 {
+        font-size: 20px;
+        margin-bottom: 18px;
+    }
+    
+    .info-row {
+        padding: 16px 14px;
+        gap: 15px;
+        min-height: 90px;
+    }
+    
+    .info-icon {
+        font-size: 32px;
+        min-width: 40px;
+    }
+    
+    .info-text {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+}
+
+@media (max-width: 480px) {
+    #authSection p {
+        font-size: 18px;
+        max-width: 280px;
+    }
+    
+    #authSection {
+        margin-top: 10px;
+    }
+    
+    #authSection h2 {
+        font-size: 22px;
+        letter-spacing: 0.5px;
+        margin-bottom: 10px;
+    }
+    
+    form {
+        padding: 25px;
+    }
+    
+    input, button[type="submit"] {
+        padding: 10px;
+        font-size: 14px;
+    }
+    
+    /* Таблица */
+    .info-table-container {
+        width: 95vw;
+        max-width: 95%;
+        padding: 20px 15px;
+        margin-top: 35px;
+        margin-bottom: 18px;
+    }
+    
+    .info-table-container h3 {
+        font-size: 18px;
+        margin-bottom: 18px;
+        letter-spacing: 1px;
+    }
+    
+    .info-row {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 18px 12px;
+        border-left: none;
+        border-top: 5px solid #a855f7;
+        min-height: auto;
+    }
+    
+    .info-icon {
+        font-size: 36px;
+        min-width: auto;
+        margin-bottom: 12px;
+    }
+    
+    .info-text {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+}
+
+@media (max-width: 400px) {
+    header h1 {
+        font-size: 32px;
+        letter-spacing: 2px;
+        white-space: normal;
+    }
+    
+    header {
+        padding: 15px 20px;
+    }
+    
+    #logoutBtn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}

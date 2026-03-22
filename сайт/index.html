@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TwitchSearch — отслеживайте стримы любимых твич стримеров">
+    <title>TwitchSearch — Отслеживание стримеров</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+    <header>
+        <h1>TwitchSearch</h1>
+        <button id="logoutBtn" class="hidden">Выйти</button>
+    </header>
+
+    <main>
+        <!-- Секция для НЕавторизованных пользователей -->
+        <div id="authSection">
+            <h2>Добро пожаловать!</h2>
+            <p>Пожалуйста, зарегистрируйтесь<br>или войдите.</p>
+            
+            <form id="loginForm">
+                <label for="username" class="visually-hidden">Имя пользователя</label>
+                <input type="text" id="username" placeholder="Придумайте имя пользователя" autocomplete="username">
+                
+                <label for="password" class="visually-hidden">Пароль</label>
+                <input type="password" id="password" placeholder="Придумайте пароль" autocomplete="new-password">
+                
+                <button type="submit">Войти / Регистрация</button>
+            </form>
+            <p id="errorMsg" class="error hidden"></p>
+
+            <!-- 📋 ИНФОРМАЦИОННАЯ ТАБЛИЦА -->
+            <div class="info-table-container">
+                <h3>📌 О сайте TwitchSearch</h3>
+                <div class="info-table">
+                    <div class="info-row">
+                        <div class="info-icon">🎮</div>
+                        <div class="info-text">
+                            Данный сайт создан для того чтобы вы без проблем могли узнавать, когда ваши любимые твич стримеры начинают свой эфир.
+                        </div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-icon">🔔</div>
+                        <div class="info-text">
+                            Вы можете выбрать каких твич стримеров вы хотели бы отслеживать и как только он запустит стрим вы получите оповещение.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Секция для АВТОРИЗОВАННЫХ пользователей (скрыта по умолчанию) -->
+        <div id="userSection" class="hidden">
+            <h2>Привет, <span id="displayUsername"></span>! 👋</h2>
+            <p>Вы успешно вошли в систему.</p>
+            <div class="card">
+                <h3>Ваш личный кабинет</h3>
+                <p>Здесь может быть ваш уникальный контент.</p>
+            </div>
+
+            <!-- 📋 ИНФОРМАЦИОННАЯ ТАБЛИЦА (в личном кабинете) -->
+            <div class="info-table-container">
+                <h3>📌 О сайте TwitchSearch</h3>
+                <div class="info-table">
+                    <div class="info-row">
+                        <div class="info-icon">🎮</div>
+                        <div class="info-text">
+                            Данный сайт создан для того чтобы вы без проблем могли узнавать, когда ваши любимые твич стримеры начинают свой эфир.
+                        </div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-icon">🔔</div>
+                        <div class="info-text">
+                            Вы можете выбрать каких твич стримеров вы хотели бы отслеживать и как только он запустит стрим вы получите оповещение.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024 TwitchSearch — Отслеживание стримеров</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
